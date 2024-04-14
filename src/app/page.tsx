@@ -1,7 +1,9 @@
 import { ContainerScroll } from "@/components/global/conatiner-scroll-animation";
 import Navbar from "@/components/global/navbar";
 import Image from "next/image";
-
+import { Button } from "@/components/ui/button";
+import { clients } from "@/lib/constants";
+import { InfiniteMovingCards } from "@/components/global/infinite-moving-cards";
 export default function Home() {
 	return (
 		<main>
@@ -11,11 +13,29 @@ export default function Home() {
 				<div className="flex flex-col mt-[-100%] md:mt-[-50px]">
 					<ContainerScroll
 						titleComponent={
-							<div className="flex items-center justify-center flex-col"></div>
+							<div className="flex items-center justify-center flex-col">
+								<Button
+									size={"lg"}
+									className="p-8 mb-8 md:mb-0 text-2xl w-full sm:w-fit *:border-t-2 rounded-full border-[#4d4d4d] bg-[#1f1f1f] hover:bg-white group transition-all flex items-center justify-center gap-4 hover:shadow-xl hover:shadow-neutral-500 duration-500"
+								>
+									<span className="bg-clip-text text-transparent bg-gradient-to-r from-neutral-500 to-neutral-600 md:text-center font-sans group-hover:from-black group-hover:to-black">
+										Start For Free Today
+									</span>
+								</Button>
+								<h1 className="text-5xl md:text-8xl bg-clip-text text-transparent bg-gradient-to-b from-white to-neutral-600 font-sans font-bold">
+									Automate Your Work With Fuzzie
+								</h1>
+							</div>
 						}
-					></ContainerScroll>
+					/>
 				</div>
 			</section>
+			<InfiniteMovingCards
+				className=" md:mt-[18rem] mt-[100px]"
+				items={clients}
+				direction="right"
+				speed="slow"
+			/>
 		</main>
 	);
 }
