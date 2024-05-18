@@ -13,6 +13,7 @@ import { Database, GitBranch, LucideMousePointerClick } from "lucide-react";
 import { UrlObject } from "url";
 import { menuOptions } from "@/lib/constants";
 import { Separator } from "@/components/ui/separator";
+import { ModeToggle } from "../global/mode-toggle";
 
 type Props = {};
 
@@ -92,7 +93,9 @@ const MenuOptions = (props: Props) => {
 					</div>
 				</div>
 			</div>
-			<div className="flex items-center justify-center flex-col gap-8"></div>
+			<div className="flex items-center justify-center flex-col gap-8">
+				<ModeToggle/>
+			</div>
 		</nav>
 	);
 };
